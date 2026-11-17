@@ -1,0 +1,19 @@
+﻿n,status,title,journal,year,vol,pages,first_author,doi,pmid,issues
+1,OK,Genomics of Drug Sensitivity in Cancer (GDSC): a resource for therapeutic biomarker discov,Nucleic acids research,2013,41,D955-61,Yang W,10.1093/nar/gks1111,23180760,
+2,CHECK,A Landscape of Pharmacogenomic Interactions in Cancer.,Cell,2016,166,740-754,Iorio F,10.1016/j.cell.2016.06.017,27397505,页 740-54→740-754
+3,CHECK,Next-generation characterization of the Cancer Cell Line Encyclopedia.,Nature,2019,569,503-508,Ghandi M,10.1038/s41586-019-1186-3,31068700,页 503-8→503-508
+4,CHECK,The Cancer Cell Line Encyclopedia enables predictive modelling of anticancer drug sensitiv,Nature,2012,483,603-607,Barretina J,10.1038/nature11003,22460905,页 603-7→603-607
+5,CHECK,Inconsistency in large pharmacogenomic studies.,Nature,2013,504,389-393,Haibe-Kains B,10.1038/nature12831,24284626,页 389-93→389-393
+6,CHECK,Revisiting inconsistency in large pharmacogenomic studies,F1000Res,2017,,,Safikhani Z,10.12688/f1000research.9611.3,,年 2016→2017; 卷 5→None; 页 2333→None
+7,CHECK,Discovering the anti-cancer potential of non-oncology drugs by systematic viability profil,Nature cancer,2020,1,235-248,Corsello SM,10.1038/s43018-019-0018-6,32613204,页 235-48→235-248
+8,CHECK,Defining a Cancer Dependency Map.,Cell,2017,170,564-576.e16,Tsherniak A,10.1016/j.cell.2017.06.010,28753430,页 564-76→564-576.e16
+9,CHECK,EGFR-mediated re-activation of MAPK signaling contributes to insensitivity of BRAF mutant ,Cancer discovery,2012,2,227-235,Corcoran RB,10.1158/2159-8290.cd-11-0341,22448344,页 227-35→227-235
+10,CHECK,Unresponsiveness of colon cancer to BRAF(V600E) inhibition through feedback activation of ,Nature,2012,483,100-103,Prahallad A,10.1038/nature10868,22281684,页 100-3→100-103
+11,CHECK,"Encorafenib, binimetinib, and cetuximab in BRAF V600E-mutated colorectal cancer: an early ",International journal of clinical oncology,2023,28,139-144,Sakata H,10.1007/s10147-022-02264-z,36355316,年 2019→2023; 卷 381→28; 页 1632-43→139-144; 首作者 Kopetz S→Sakata H
+12,CHECK,Analysis of Consensus Molecular Subtypes of Colorectal Cancer in Oman with Clinicopatholog,International journal of molecular sciences,2026,27,2038,Rehman S,10.3390/ijms27042038,41752172,年 2015→2026; 卷 21→27; 页 1350-6→2038; 首作者 Guinney J→Rehman S
+13,CHECK,Tumor microsatellite-instability status as a predictor of benefit from fluorouracil-based ,The New England journal of medicine,2003,349,247-257,Ribic CM,10.1056/nejmoa022289,12867608,页 247-57→247-257
+14,CHECK,Patient-derived organoids model treatment response of metastatic gastrointestinal cancers.,"Science (New York, N.Y.)",2018,359,920-926,Vlachogiannis G,10.1126/science.aao2774,29472484,页 920-6→920-926
+15,NOT_FOUND,Controlling the false discovery rate: a practical and powerful approach to multiple testing,,,,,,,,
+16,CHECK,TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use re,Ewha medical journal,2025,48,e48,Collins GS,10.12771/emj.2025.00668,40739973,年 2024→2025; 卷 385→48; 页 e078378→e48; 刊 BMJ→Ewha medical journal
+17,CHECK,PROBAST: A Tool to Assess the Risk of Bias and Applicability of Prediction Model Studies.,Annals of internal medicine,2019,170,51-58,Wolff RF,10.7326/m18-1376,30596875,页 51-8→51-58
+18,CHECK,Reporting Recommendations for Tumor Marker Prognostic Studies (REMARK): An Abridged Explan,Journal of the National Cancer Institute,2018,110,803-811,Sauerbrei W,10.1093/jnci/djy088,29873743,页 803-11→803-811

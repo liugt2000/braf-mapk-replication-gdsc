@@ -1,0 +1,33 @@
+{
+  "file": "data/raw/GDSC2_fitted_dose_response_24Jul22.csv",
+  "second_file": "data/raw/GDSC1_fitted_dose_response_24Jul22.csv",
+  "disease": "COREAD",
+  "censoring": {
+    "n_curves": 12538,
+    "n_lines": 46,
+    "n_drugs": 286,
+    "frac_extrapolated_high": 0.7303,
+    "frac_extrapolated_low": 0.001,
+    "frac_identifiable": 0.2688
+  },
+  "reliability": {
+    "n_pairs": 4307,
+    "pearson_r": 0.811,
+    "icc_1_1": 0.6061,
+    "median_fold_diff": 2.964,
+    "frac_pairs_gt_2fold": 0.6701,
+    "frac_both_identifiable": 0.1799,
+    "pearson_r_both_identifiable": 0.829,
+    "n_both_identifiable": 775
+  },
+  "verdict": [
+    "✗ 删失过重：仅 26.9% 的 IC50 落在实测浓度区间内（阈值 ≥ 70%）。IC50 不可作为连续回归目标；考虑改用删失/区间回归，或改用可测量的替代终点。",
+    "✓ 跨测定信度 r = 0.81 达到阈值。",
+    "✗ 仅 18.0% 的配对在两次测定中都可识别，表观一致性可能来自共同外推。"
+  ],
+  "thresholds": {
+    "censoring_fraction": 0.3,
+    "cross_campaign_r": 0.7,
+    "identifiable_pairs": 0.5
+  }
+}

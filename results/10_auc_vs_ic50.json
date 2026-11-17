@@ -1,0 +1,198 @@
+{
+  "reliability": [
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 4307,
+      "pearson_r": 0.811,
+      "r_squared": 0.658,
+      "median_abs_diff": 1.0867,
+      "drug": NaN
+    },
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 43,
+      "pearson_r": 0.667,
+      "r_squared": 0.445,
+      "median_abs_diff": NaN,
+      "drug": "5-Fluorouracil"
+    },
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 44,
+      "pearson_r": 0.532,
+      "r_squared": 0.283,
+      "median_abs_diff": NaN,
+      "drug": "SN-38"
+    },
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 43,
+      "pearson_r": 0.751,
+      "r_squared": 0.563,
+      "median_abs_diff": NaN,
+      "drug": "Trametinib"
+    },
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 45,
+      "pearson_r": 0.61,
+      "r_squared": 0.372,
+      "median_abs_diff": NaN,
+      "drug": "Selumetinib"
+    },
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 41,
+      "pearson_r": 0.645,
+      "r_squared": 0.416,
+      "median_abs_diff": NaN,
+      "drug": "Dabrafenib"
+    },
+    {
+      "metric": "LN_IC50",
+      "n_pairs": 45,
+      "pearson_r": 0.362,
+      "r_squared": 0.131,
+      "median_abs_diff": NaN,
+      "drug": "Fulvestrant"
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 4307,
+      "pearson_r": 0.664,
+      "r_squared": 0.441,
+      "median_abs_diff": 0.0401,
+      "drug": NaN
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 43,
+      "pearson_r": 0.627,
+      "r_squared": 0.393,
+      "median_abs_diff": NaN,
+      "drug": "5-Fluorouracil"
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 44,
+      "pearson_r": 0.293,
+      "r_squared": 0.086,
+      "median_abs_diff": NaN,
+      "drug": "SN-38"
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 43,
+      "pearson_r": 0.788,
+      "r_squared": 0.621,
+      "median_abs_diff": NaN,
+      "drug": "Trametinib"
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 45,
+      "pearson_r": 0.682,
+      "r_squared": 0.465,
+      "median_abs_diff": NaN,
+      "drug": "Selumetinib"
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 41,
+      "pearson_r": 0.748,
+      "r_squared": 0.56,
+      "median_abs_diff": NaN,
+      "drug": "Dabrafenib"
+    },
+    {
+      "metric": "AUC",
+      "n_pairs": 45,
+      "pearson_r": 0.205,
+      "r_squared": 0.042,
+      "median_abs_diff": NaN,
+      "drug": "Fulvestrant"
+    }
+  ],
+  "model": [
+    {
+      "drug": "5-Fluorouracil",
+      "n": 39,
+      "LN_IC50_r2": 0.286,
+      "LN_IC50_null95": -0.026,
+      "LN_IC50_beats": true,
+      "AUC_r2": 0.071,
+      "AUC_null95": -0.036,
+      "AUC_beats": true
+    },
+    {
+      "drug": "Oxaliplatin",
+      "n": 39,
+      "LN_IC50_r2": 0.106,
+      "LN_IC50_null95": -0.006,
+      "LN_IC50_beats": true,
+      "AUC_r2": -0.119,
+      "AUC_null95": -0.008,
+      "AUC_beats": false
+    },
+    {
+      "drug": "Irinotecan",
+      "n": 39,
+      "LN_IC50_r2": 0.085,
+      "LN_IC50_null95": 0.023,
+      "LN_IC50_beats": true,
+      "AUC_r2": -0.343,
+      "AUC_null95": 0.03,
+      "AUC_beats": false
+    },
+    {
+      "drug": "SN-38",
+      "n": 38,
+      "LN_IC50_r2": -0.135,
+      "LN_IC50_null95": -0.028,
+      "LN_IC50_beats": false,
+      "AUC_r2": -0.221,
+      "AUC_null95": -0.028,
+      "AUC_beats": false
+    },
+    {
+      "drug": "Trametinib",
+      "n": 39,
+      "LN_IC50_r2": -0.059,
+      "LN_IC50_null95": -0.027,
+      "LN_IC50_beats": false,
+      "AUC_r2": -0.105,
+      "AUC_null95": 0.014,
+      "AUC_beats": false
+    },
+    {
+      "drug": "Selumetinib",
+      "n": 39,
+      "LN_IC50_r2": -0.227,
+      "LN_IC50_null95": 0.098,
+      "LN_IC50_beats": false,
+      "AUC_r2": -0.12,
+      "AUC_null95": 0.07,
+      "AUC_beats": false
+    },
+    {
+      "drug": "Dabrafenib",
+      "n": 38,
+      "LN_IC50_r2": -0.203,
+      "LN_IC50_null95": -0.027,
+      "LN_IC50_beats": false,
+      "AUC_r2": -0.329,
+      "AUC_null95": -0.034,
+      "AUC_beats": false
+    },
+    {
+      "drug": "Fulvestrant",
+      "n": 39,
+      "LN_IC50_r2": -0.209,
+      "LN_IC50_null95": -0.03,
+      "LN_IC50_beats": false,
+      "AUC_r2": -0.04,
+      "AUC_null95": -0.017,
+      "AUC_beats": false
+    }
+  ]
+}

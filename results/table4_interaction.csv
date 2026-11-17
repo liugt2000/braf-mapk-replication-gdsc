@@ -1,0 +1,7 @@
+subset,score,n,events,n_chemo,HR_score,p_score,HR_chemo,p_chemo,HR_int,int_lo,int_hi,p_int
+stage II-III,score_5FU,232,90,71,1.153,0.2241,0.357,0.0005,1.08,0.662,1.763,0.7582
+stage II-III,score_random,232,90,71,1.035,0.7605,0.372,0.0008,0.922,0.578,1.47,0.7328
+stage II-III,score_prolif,232,90,71,0.852,0.2079,0.378,0.0009,1.202,0.777,1.861,0.4086
+all stages,score_5FU,347,155,104,1.027,0.7815,0.505,0.0004,1.11,0.785,1.57,0.5541
+all stages,score_random,347,155,104,1.027,0.7802,0.516,0.0006,1.048,0.713,1.54,0.8129
+all stages,score_prolif,347,155,104,0.767,0.003,0.523,0.0007,1.316,0.96,1.804,0.0877

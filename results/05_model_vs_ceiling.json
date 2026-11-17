@@ -1,0 +1,102 @@
+{
+  "n_matched_lines": 39,
+  "n_genes_used": 2000,
+  "table": [
+    {
+      "drug": "5-Fluorouracil",
+      "n_lines": 39,
+      "model_cv_r2": 0.364,
+      "model_spearman": 0.64,
+      "null_r2_p95": -0.033,
+      "null_r2_median": -0.137,
+      "beats_null": true,
+      "prolif_baseline_r2": -0.154,
+      "ceiling_rho": 0.667,
+      "r2_minus_ceiling": -0.304
+    },
+    {
+      "drug": "Oxaliplatin",
+      "n_lines": 39,
+      "model_cv_r2": 0.198,
+      "model_spearman": 0.371,
+      "null_r2_p95": 0.045,
+      "null_r2_median": -0.222,
+      "beats_null": true,
+      "prolif_baseline_r2": -0.088,
+      "ceiling_rho": NaN,
+      "r2_minus_ceiling": NaN
+    },
+    {
+      "drug": "Irinotecan",
+      "n_lines": 39,
+      "model_cv_r2": 0.102,
+      "model_spearman": 0.452,
+      "null_r2_p95": 0.067,
+      "null_r2_median": -0.345,
+      "beats_null": true,
+      "prolif_baseline_r2": -0.071,
+      "ceiling_rho": NaN,
+      "r2_minus_ceiling": NaN
+    },
+    {
+      "drug": "SN-38",
+      "n_lines": 38,
+      "model_cv_r2": -0.123,
+      "model_spearman": 0.122,
+      "null_r2_p95": -0.029,
+      "null_r2_median": -0.069,
+      "beats_null": false,
+      "prolif_baseline_r2": -0.038,
+      "ceiling_rho": 0.532,
+      "r2_minus_ceiling": -0.655
+    },
+    {
+      "drug": "Trametinib",
+      "n_lines": 39,
+      "model_cv_r2": -0.185,
+      "model_spearman": -0.167,
+      "null_r2_p95": -0.049,
+      "null_r2_median": -0.171,
+      "beats_null": false,
+      "prolif_baseline_r2": -0.294,
+      "ceiling_rho": 0.751,
+      "r2_minus_ceiling": -0.936
+    },
+    {
+      "drug": "Selumetinib",
+      "n_lines": 39,
+      "model_cv_r2": -0.219,
+      "model_spearman": -0.455,
+      "null_r2_p95": -0.025,
+      "null_r2_median": -0.105,
+      "beats_null": false,
+      "prolif_baseline_r2": -0.392,
+      "ceiling_rho": 0.61,
+      "r2_minus_ceiling": -0.829
+    },
+    {
+      "drug": "Dabrafenib",
+      "n_lines": 38,
+      "model_cv_r2": -0.173,
+      "model_spearman": -0.253,
+      "null_r2_p95": -0.047,
+      "null_r2_median": -0.126,
+      "beats_null": false,
+      "prolif_baseline_r2": -0.167,
+      "ceiling_rho": 0.645,
+      "r2_minus_ceiling": -0.817
+    },
+    {
+      "drug": "Fulvestrant",
+      "n_lines": 39,
+      "model_cv_r2": -0.052,
+      "model_spearman": -0.196,
+      "null_r2_p95": -0.025,
+      "null_r2_median": -0.128,
+      "beats_null": false,
+      "prolif_baseline_r2": -0.049,
+      "ceiling_rho": 0.362,
+      "r2_minus_ceiling": -0.414
+    }
+  ]
+}

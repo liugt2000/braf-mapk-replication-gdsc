@@ -1,0 +1,29 @@
+{
+  "coread_lines_gdsc1": 46,
+  "coread_lines_gdsc2": 46,
+  "overlap_pairs": 4307,
+  "overlap_lines": 46,
+  "overlap_drugs": 121,
+  "overall": {
+    "n_pairs": 4307,
+    "pearson_r": 0.811,
+    "r_squared": 0.658,
+    "spearman_rho": 0.767,
+    "icc_1_1": 0.606,
+    "median_abs_diff_ln": 1.087,
+    "median_fold_diff": 2.96,
+    "pct_pairs_fold_gt_2": 67.0,
+    "pct_pairs_fold_gt_4": 39.7
+  },
+  "chemo_backbone": {
+    "n_pairs": 87,
+    "pearson_r": 0.789,
+    "r_squared": 0.622,
+    "spearman_rho": 0.796,
+    "icc_1_1": 0.489,
+    "median_abs_diff_ln": 1.409,
+    "median_fold_diff": 4.09,
+    "pct_pairs_fold_gt_2": 73.6,
+    "pct_pairs_fold_gt_4": 51.7
+  }
+}

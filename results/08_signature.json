@@ -1,0 +1,52 @@
+{
+  "n_signature_genes": 37,
+  "n_mapped": 35,
+  "up_genes": [
+    "TFAP2C",
+    "GREM1",
+    "AMOT",
+    "L1CAM",
+    "BATF",
+    "KRTAP3-1",
+    "GALNT12",
+    "FKBP10",
+    "WNT9A",
+    "CYP1A1",
+    "PRAC1",
+    "RPL22L1",
+    "FOXJ1",
+    "ZNF655",
+    "MCOLN2",
+    "GLIS2",
+    "RNF128",
+    "SIGLEC6",
+    "CXCL5",
+    "FAM111A"
+  ],
+  "down_genes": [
+    "SIGLEC6",
+    "CXCL5",
+    "FAM111A",
+    "GNG4",
+    "SEMA3B",
+    "TXNIP",
+    "UPK2",
+    "SYP",
+    "ALPP",
+    "LY6G6C",
+    "MAOB",
+    "RP11-60A8.1",
+    "DAPP1",
+    "HPGD",
+    "S100A9",
+    "SPON1",
+    "MDK",
+    "SOGA1",
+    "GPR160",
+    "CLCF1"
+  ],
+  "n_samples": {
+    "coadread_tcga": 382,
+    "coad_silu_2022": 348
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "n_wells_used": 1325787,
+  "n_replicate_groups": 51372,
+  "replicate_cv_median": 0.094,
+  "replicate_cv_p90": 0.239,
+  "dmso_plate_cv_median": 0.421,
+  "n_drug_conc_comparisons": 976,
+  "between_line_sd_median": 0.148,
+  "tech_cv_median": 0.09,
+  "snr_median": 1.54,
+  "pct_snr_lt1": 9.0,
+  "pct_snr_lt2": 74.4,
+  "per_drug": [
+    {
+      "drug": "5-Fluorouracil",
+      "n_conc": 13,
+      "between_sd": 0.1616739688127329,
+      "tech_cv": 0.08490990982843324,
+      "snr_median": 1.8750550069205942,
+      "pct_snr_lt1": 0.0
+    },
+    {
+      "drug": "Dabrafenib",
+      "n_conc": 13,
+      "between_sd": 0.23684293878172352,
+      "tech_cv": 0.08742568382199664,
+      "snr_median": 2.5896140045322813,
+      "pct_snr_lt1": 0.0
+    },
+    {
+      "drug": "Fulvestrant",
+      "n_conc": 7,
+      "between_sd": 0.16373019292498325,
+      "tech_cv": 0.08515721785002328,
+      "snr_median": 1.8283358045303182,
+      "pct_snr_lt1": 0.0
+    },
+    {
+      "drug": "Oxaliplatin",
+      "n_conc": 13,
+      "between_sd": 0.16835151002958265,
+      "tech_cv": 0.08290381624239329,
+      "snr_median": 1.916610058607819,
+      "pct_snr_lt1": 0.0
+    },
+    {
+      "drug": "SN-38",
+      "n_conc": 7,
+      "between_sd": 0.11770504730357874,
+      "tech_cv": 0.062088803416059664,
+      "snr_median": 1.9064845251983216,
+      "pct_snr_lt1": 0.0
+    },
+    {
+      "drug": "Selumetinib",
+      "n_conc": 7,
+      "between_sd": 0.17178650961267578,
+      "tech_cv": 0.11217056631033326,
+      "snr_median": 1.5571628899231165,
+      "pct_snr_lt1": 0.0
+    },
+    {
+      "drug": "Trametinib",
+      "n_conc": 13,
+      "between_sd": 0.18174898088887556,
+      "tech_cv": 0.168292575911842,
+      "snr_median": 1.0132052528965316,
+      "pct_snr_lt1": 46.2
+    }
+  ]
+}

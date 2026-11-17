@@ -1,0 +1,27 @@
+{
+  "unit_audit": {
+    "COREAD_Dabrafenib_median_uM": 3.3059,
+    "COREAD_Dabrafenib_n": 6,
+    "COREAD_Trametinib_median_uM": 0.0148,
+    "COREAD_Trametinib_n": 6,
+    "SKCM_Dabrafenib_median_uM": 0.1115,
+    "SKCM_Dabrafenib_n": 30,
+    "SKCM_Trametinib_median_uM": 0.0085,
+    "SKCM_Trametinib_n": 30,
+    "dabrafenib_CRC_vs_SKCM_fold": 29.6
+  },
+  "n_lines": 43,
+  "n_dt": 42,
+  "n_gr_identifiable": 17,
+  "crc_n": 3,
+  "oth_n": 14,
+  "delta_GR_crc": 5.644,
+  "delta_GR_oth": 2.072,
+  "delta_GR_p": 0.020588235294117647,
+  "gr50_dab_crc_uM": 1.3331,
+  "gr50_dab_oth_uM": 0.1604,
+  "gr50_tra_crc_uM": 0.0035,
+  "gr50_tra_oth_uM": 0.0062,
+  "rawIC50_vs_fitted_spearman_dab": 0.857,
+  "rawIC50_vs_fitted_spearman_tra": 0.945
+}

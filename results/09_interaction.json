@@ -1,0 +1,152 @@
+{
+  "stage II-III|score_5FU": {
+    "s": {
+      "HR": 1.153,
+      "lo": 0.916,
+      "hi": 1.451,
+      "p": 0.2241
+    },
+    "chemo": {
+      "HR": 0.357,
+      "lo": 0.2,
+      "hi": 0.638,
+      "p": 0.0005
+    },
+    "int": {
+      "HR": 1.08,
+      "lo": 0.662,
+      "hi": 1.763,
+      "p": 0.7582
+    },
+    "n": 232,
+    "events": 90,
+    "chemo_n": 71,
+    "label": "stage II-III",
+    "score": "score_5FU"
+  },
+  "stage II-III|score_random": {
+    "s": {
+      "HR": 1.035,
+      "lo": 0.83,
+      "hi": 1.291,
+      "p": 0.7605
+    },
+    "chemo": {
+      "HR": 0.372,
+      "lo": 0.209,
+      "hi": 0.664,
+      "p": 0.0008
+    },
+    "int": {
+      "HR": 0.922,
+      "lo": 0.578,
+      "hi": 1.47,
+      "p": 0.7328
+    },
+    "n": 232,
+    "events": 90,
+    "chemo_n": 71,
+    "label": "stage II-III",
+    "score": "score_random"
+  },
+  "stage II-III|score_prolif": {
+    "s": {
+      "HR": 0.852,
+      "lo": 0.665,
+      "hi": 1.093,
+      "p": 0.2079
+    },
+    "chemo": {
+      "HR": 0.378,
+      "lo": 0.214,
+      "hi": 0.67,
+      "p": 0.0009
+    },
+    "int": {
+      "HR": 1.202,
+      "lo": 0.777,
+      "hi": 1.861,
+      "p": 0.4086
+    },
+    "n": 232,
+    "events": 90,
+    "chemo_n": 71,
+    "label": "stage II-III",
+    "score": "score_prolif"
+  },
+  "all stages|score_5FU": {
+    "s": {
+      "HR": 1.027,
+      "lo": 0.852,
+      "hi": 1.238,
+      "p": 0.7815
+    },
+    "chemo": {
+      "HR": 0.505,
+      "lo": 0.345,
+      "hi": 0.738,
+      "p": 0.0004
+    },
+    "int": {
+      "HR": 1.11,
+      "lo": 0.785,
+      "hi": 1.57,
+      "p": 0.5541
+    },
+    "n": 347,
+    "events": 155,
+    "chemo_n": 104,
+    "label": "all stages",
+    "score": "score_5FU"
+  },
+  "all stages|score_random": {
+    "s": {
+      "HR": 1.027,
+      "lo": 0.854,
+      "hi": 1.235,
+      "p": 0.7802
+    },
+    "chemo": {
+      "HR": 0.516,
+      "lo": 0.354,
+      "hi": 0.751,
+      "p": 0.0006
+    },
+    "int": {
+      "HR": 1.048,
+      "lo": 0.713,
+      "hi": 1.54,
+      "p": 0.8129
+    },
+    "n": 347,
+    "events": 155,
+    "chemo_n": 104,
+    "label": "all stages",
+    "score": "score_random"
+  },
+  "all stages|score_prolif": {
+    "s": {
+      "HR": 0.767,
+      "lo": 0.644,
+      "hi": 0.914,
+      "p": 0.003
+    },
+    "chemo": {
+      "HR": 0.523,
+      "lo": 0.36,
+      "hi": 0.759,
+      "p": 0.0007
+    },
+    "int": {
+      "HR": 1.316,
+      "lo": 0.96,
+      "hi": 1.804,
+      "p": 0.0877
+    },
+    "n": 347,
+    "events": 155,
+    "chemo_n": 104,
+    "label": "all stages",
+    "score": "score_prolif"
+  }
+}

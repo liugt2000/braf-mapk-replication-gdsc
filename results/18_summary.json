@@ -1,0 +1,11 @@
+{
+  "n_testable":1338,
+  "n_pass":5,
+  "null_mean":0.02,
+  "null_q95":0.0,
+  "empirical_p":0.0049751244,
+  "fdr_hits":61,
+  "only_genes":[
+    "BRAF"
+  ]
+}

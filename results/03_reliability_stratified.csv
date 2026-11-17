@@ -1,0 +1,16 @@
+subset,stratum,n_pairs,pct_of_subset,icc_1_1,pearson_r,r2_ceiling,median_fold_diff,pct_fold_gt_2
+ALL,all pairs,4307,100.0,0.606,0.811,0.658,2.96,67.0
+ALL,both identifiable,775,18.0,0.653,0.829,0.687,2.24,55.4
+chemo,all pairs,87,100.0,0.489,0.789,0.622,4.09,73.6
+chemo,both identifiable,31,35.6,0.777,0.921,0.849,2.34,58.1
+drug:5-Fluorouracil,all pairs,43,100.0,0.223,0.667,0.445,3.48,76.7
+drug:5-Fluorouracil,both identifiable,14,32.6,-0.649,0.048,0.002,2.77,78.6
+drug:SN-38,all pairs,44,100.0,-0.147,0.532,0.283,5.17,70.5
+drug:SN-38,both identifiable,17,38.6,-0.14,0.377,0.142,1.98,41.2
+drug:Trametinib,all pairs,43,100.0,0.552,0.751,0.563,2.71,69.8
+drug:Trametinib,both identifiable,28,65.1,0.469,0.76,0.577,2.63,60.7
+drug:Selumetinib,all pairs,45,100.0,0.171,0.61,0.372,3.15,68.9
+drug:Selumetinib,both identifiable,7,15.6,0.137,0.813,0.661,2.94,71.4
+drug:Dabrafenib,all pairs,41,100.0,0.255,0.645,0.416,2.62,68.3
+drug:Dabrafenib,both identifiable,5,12.2,-0.048,0.917,0.841,2.39,80.0
+drug:Fulvestrant,all pairs,45,100.0,0.033,0.362,0.131,2.28,57.8

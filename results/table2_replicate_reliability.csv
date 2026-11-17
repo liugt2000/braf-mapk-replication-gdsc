@@ -1,0 +1,3 @@
+scheme,key,n_comparisons,n_curves_involved,pooled_within_pair_sd_ln,median_pair_sd_ln,pct_pairs_sd_gt_1,pct_pairs_ratio_gt_7.4x,typical_pair_fold_ratio,icc_1
+loose: line + DRUG_NAME (可能跨批次),CELL_LINE_NAME + DRUG_NAME,379,758,1.268,0.815,43.0,25.1,6.01,0.838
+chemo panel only: line + DRUG_NAME,CELL_LINE_NAME + DRUG_NAME,45,90,1.196,0.853,44.4,26.7,5.43,0.343

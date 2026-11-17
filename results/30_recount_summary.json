@@ -1,0 +1,129 @@
+{
+  "line_level": {
+    "n": 960,
+    "r": -0.0289,
+    "p": 0.37190141880822053
+  },
+  "gene_level": {
+    "n_genes_panel": 33,
+    "n_testable": 26,
+    "n_positive": 25,
+    "positive_pct_exact": 96.15,
+    "printed_pct_19style": "96%",
+    "median_d": 1.4042,
+    "positive_genes": [
+      "APC",
+      "ARID1A",
+      "ATM",
+      "BRAF",
+      "BRCA1",
+      "BRCA2",
+      "CDKN2A",
+      "CTNNB1",
+      "EGFR",
+      "ERBB2",
+      "ERCC5",
+      "FBXW7",
+      "KRAS",
+      "MET",
+      "MLH1",
+      "MSH2",
+      "MSH6",
+      "NF1",
+      "PIK3CA",
+      "PMS2",
+      "PTEN",
+      "RB1",
+      "RNF43",
+      "SMAD4",
+      "TP53"
+    ],
+    "nonpositive_genes": [
+      "NRAS"
+    ],
+    "nonpositive_details": [
+      {
+        "gene": "NRAS",
+        "n_alt": 63,
+        "d_burden": -0.03613784487929169
+      }
+    ]
+  },
+  "burden_adjusted": {
+    "n_combos": 2891,
+    "n_significant": 48,
+    "genes_involved": [
+      "APC",
+      "BRAF",
+      "KRAS",
+      "NF1",
+      "NRAS",
+      "PIK3CA",
+      "PTEN",
+      "RB1",
+      "RNF43",
+      "TP53"
+    ],
+    "top8_by_abs_beta": [
+      {
+        "drug": "Dabrafenib",
+        "gene": "BRAF",
+        "beta_adj": -2.1414
+      },
+      {
+        "drug": "PD0325901",
+        "gene": "BRAF",
+        "beta_adj": -1.3651
+      },
+      {
+        "drug": "Refametinib",
+        "gene": "BRAF",
+        "beta_adj": -1.3264
+      },
+      {
+        "drug": "Trametinib",
+        "gene": "BRAF",
+        "beta_adj": -1.2977
+      },
+      {
+        "drug": "Gemcitabine",
+        "gene": "APC",
+        "beta_adj": 1.2493
+      },
+      {
+        "drug": "PLX-4720",
+        "gene": "BRAF",
+        "beta_adj": -1.1485
+      },
+      {
+        "drug": "Selumetinib",
+        "gene": "BRAF",
+        "beta_adj": -1.1211
+      },
+      {
+        "drug": "ABT737",
+        "gene": "PIK3CA",
+        "beta_adj": 1.0265
+      }
+    ]
+  },
+  "reproduce_19_scan": {
+    "rows_19": 2891,
+    "rows_30": 2891,
+    "max_beta_abs_diff": 1.5265566588595902e-15,
+    "max_p_abs_diff": 2.7755575615628914e-15
+  },
+  "manuscript_value_checks": {
+    "r_expect_-0.03": true,
+    "p_expect_0.37": true,
+    "n_lines_expect_962": false,
+    "median_d_expect_+1.40": true,
+    "n_combos_expect_2891": true,
+    "n_sig_expect_48": true,
+    "MLH1_expect_+3.18": true,
+    "BRCA2_expect_+3.14": true,
+    "MSH6_expect_+2.62": true,
+    "FBXW7_expect_+2.30": true,
+    "BRAF_expect_+0.20": true
+  }
+}

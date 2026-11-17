@@ -1,0 +1,171 @@
+{
+  "n_overlap_pairs": 4307,
+  "pct_pairs_both_identifiable": 18.0,
+  "table": [
+    {
+      "subset": "ALL",
+      "stratum": "all pairs",
+      "n_pairs": 4307,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.606,
+      "pearson_r": 0.811,
+      "r2_ceiling": 0.658,
+      "median_fold_diff": 2.96,
+      "pct_fold_gt_2": 67.0
+    },
+    {
+      "subset": "ALL",
+      "stratum": "both identifiable",
+      "n_pairs": 775,
+      "pct_of_subset": 18.0,
+      "icc_1_1": 0.653,
+      "pearson_r": 0.829,
+      "r2_ceiling": 0.687,
+      "median_fold_diff": 2.24,
+      "pct_fold_gt_2": 55.4
+    },
+    {
+      "subset": "chemo",
+      "stratum": "all pairs",
+      "n_pairs": 87,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.489,
+      "pearson_r": 0.789,
+      "r2_ceiling": 0.622,
+      "median_fold_diff": 4.09,
+      "pct_fold_gt_2": 73.6
+    },
+    {
+      "subset": "chemo",
+      "stratum": "both identifiable",
+      "n_pairs": 31,
+      "pct_of_subset": 35.6,
+      "icc_1_1": 0.777,
+      "pearson_r": 0.921,
+      "r2_ceiling": 0.849,
+      "median_fold_diff": 2.34,
+      "pct_fold_gt_2": 58.1
+    },
+    {
+      "subset": "drug:5-Fluorouracil",
+      "stratum": "all pairs",
+      "n_pairs": 43,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.223,
+      "pearson_r": 0.667,
+      "r2_ceiling": 0.445,
+      "median_fold_diff": 3.48,
+      "pct_fold_gt_2": 76.7
+    },
+    {
+      "subset": "drug:5-Fluorouracil",
+      "stratum": "both identifiable",
+      "n_pairs": 14,
+      "pct_of_subset": 32.6,
+      "icc_1_1": -0.649,
+      "pearson_r": 0.048,
+      "r2_ceiling": 0.002,
+      "median_fold_diff": 2.77,
+      "pct_fold_gt_2": 78.6
+    },
+    {
+      "subset": "drug:SN-38",
+      "stratum": "all pairs",
+      "n_pairs": 44,
+      "pct_of_subset": 100.0,
+      "icc_1_1": -0.147,
+      "pearson_r": 0.532,
+      "r2_ceiling": 0.283,
+      "median_fold_diff": 5.17,
+      "pct_fold_gt_2": 70.5
+    },
+    {
+      "subset": "drug:SN-38",
+      "stratum": "both identifiable",
+      "n_pairs": 17,
+      "pct_of_subset": 38.6,
+      "icc_1_1": -0.14,
+      "pearson_r": 0.377,
+      "r2_ceiling": 0.142,
+      "median_fold_diff": 1.98,
+      "pct_fold_gt_2": 41.2
+    },
+    {
+      "subset": "drug:Trametinib",
+      "stratum": "all pairs",
+      "n_pairs": 43,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.552,
+      "pearson_r": 0.751,
+      "r2_ceiling": 0.563,
+      "median_fold_diff": 2.71,
+      "pct_fold_gt_2": 69.8
+    },
+    {
+      "subset": "drug:Trametinib",
+      "stratum": "both identifiable",
+      "n_pairs": 28,
+      "pct_of_subset": 65.1,
+      "icc_1_1": 0.469,
+      "pearson_r": 0.76,
+      "r2_ceiling": 0.577,
+      "median_fold_diff": 2.63,
+      "pct_fold_gt_2": 60.7
+    },
+    {
+      "subset": "drug:Selumetinib",
+      "stratum": "all pairs",
+      "n_pairs": 45,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.171,
+      "pearson_r": 0.61,
+      "r2_ceiling": 0.372,
+      "median_fold_diff": 3.15,
+      "pct_fold_gt_2": 68.9
+    },
+    {
+      "subset": "drug:Selumetinib",
+      "stratum": "both identifiable",
+      "n_pairs": 7,
+      "pct_of_subset": 15.6,
+      "icc_1_1": 0.137,
+      "pearson_r": 0.813,
+      "r2_ceiling": 0.661,
+      "median_fold_diff": 2.94,
+      "pct_fold_gt_2": 71.4
+    },
+    {
+      "subset": "drug:Dabrafenib",
+      "stratum": "all pairs",
+      "n_pairs": 41,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.255,
+      "pearson_r": 0.645,
+      "r2_ceiling": 0.416,
+      "median_fold_diff": 2.62,
+      "pct_fold_gt_2": 68.3
+    },
+    {
+      "subset": "drug:Dabrafenib",
+      "stratum": "both identifiable",
+      "n_pairs": 5,
+      "pct_of_subset": 12.2,
+      "icc_1_1": -0.048,
+      "pearson_r": 0.917,
+      "r2_ceiling": 0.841,
+      "median_fold_diff": 2.39,
+      "pct_fold_gt_2": 80.0
+    },
+    {
+      "subset": "drug:Fulvestrant",
+      "stratum": "all pairs",
+      "n_pairs": 45,
+      "pct_of_subset": 100.0,
+      "icc_1_1": 0.033,
+      "pearson_r": 0.362,
+      "r2_ceiling": 0.131,
+      "median_fold_diff": 2.28,
+      "pct_fold_gt_2": 57.8
+    }
+  ]
+}

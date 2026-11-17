@@ -1,0 +1,365 @@
+{
+  "date": "2026-11-17",
+  "braf_reference": {
+    "v600_samples": 101,
+    "study_universe": 1678,
+    "sequenced_coverage": "ccle_broad_2019_sequenced=1570 (API 无样本ID端点, WT=全集(1739)-V600; 未测序~169 不在 CTRP/PRISM 主流系中, 影响可忽略, 已记录)"
+  },
+  "ctrpv2": {
+    "pset": "Orcestra canonical CTRPv2_2015 (DOI 10.5281/zenodo.7826870)",
+    "anchor_verdict": {
+      "aac_recomputed": {
+        "melanoma_anchor_median": 0.1973413058727413,
+        "crc_anchor_median": 0.09215991428993381,
+        "separates": true
+      },
+      "aac_published": {
+        "melanoma_anchor_median": 12.041,
+        "crc_anchor_median": 13.526,
+        "separates": false
+      },
+      "chosen": "aac_recomputed"
+    },
+    "metric": "aac_recomputed",
+    "tests": [
+      {
+        "dataset": "CTRPv2",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Dabrafenib",
+        "metric": "aac_recomputed",
+        "n1": 26,
+        "n2": 355,
+        "med1": 0.40536793480270117,
+        "med2": 0.050872235319908816,
+        "U": 8537.0,
+        "p": 4.591266069254727e-13
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 29,
+        "n2": 358,
+        "med1": 0.599266698819359,
+        "med2": 0.22805554504239423,
+        "U": 8140.0,
+        "p": 3.59881478229282e-07
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Vemurafenib",
+        "metric": "aac_recomputed",
+        "n1": 53,
+        "n2": 672,
+        "med1": 0.14491666946272455,
+        "med2": 0.02212796337362128,
+        "U": 30515.0,
+        "p": 1.3958462897104875e-18
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "PLX4720",
+        "metric": "aac_recomputed",
+        "n1": 56,
+        "n2": 714,
+        "med1": 0.1596781091656785,
+        "med2": 0.027717417287131743,
+        "U": 36307.0,
+        "p": 2.3214578934618574e-24
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 54,
+        "n2": 693,
+        "med1": 0.33164130507626455,
+        "med2": 0.17668381341793635,
+        "U": 27234.0,
+        "p": 2.4033103657685486e-08
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_AAC_Vemurafenib",
+        "drug": "Vemurafenib+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 29,
+        "med1": 0.09215991428993381,
+        "med2": 0.19596439235578153,
+        "U": 36.0,
+        "p": 0.0033544371823590784
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_AAC_Selumetinib",
+        "drug": "Vemurafenib+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 29,
+        "med1": 0.3297572641452184,
+        "med2": 0.34215252749136504,
+        "U": 89.0,
+        "p": 0.33506623753303066
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_dAAC_Selumetinib_minus_Vemurafenib",
+        "drug": "Vemurafenib+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 29,
+        "med1": 0.22883370684416643,
+        "med2": 0.20171289276149512,
+        "U": 138.0,
+        "p": 0.4351506759476398
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_allothers_dAAC",
+        "drug": "Vemurafenib+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 41,
+        "med1": 0.22883370684416643,
+        "med2": 0.1797341076798104,
+        "U": 206.0,
+        "p": 0.267248443076165
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_AAC_PLX4720",
+        "drug": "PLX4720+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 30,
+        "med1": 0.10519870510825051,
+        "med2": 0.20407260721284667,
+        "U": 53.0,
+        "p": 0.015070621132740377
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_AAC_Selumetinib",
+        "drug": "PLX4720+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 30,
+        "med1": 0.3297572641452184,
+        "med2": 0.3654312976787686,
+        "U": 82.0,
+        "p": 0.18304447461543238
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_dAAC_Selumetinib_minus_PLX4720",
+        "drug": "PLX4720+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 30,
+        "med1": 0.23585582618080875,
+        "med2": 0.17269425146681577,
+        "U": 142.0,
+        "p": 0.448897596106225
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_allothers_dAAC",
+        "drug": "PLX4720+Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 8,
+        "n2": 44,
+        "med1": 0.23585582618080875,
+        "med2": 0.16642509250940235,
+        "U": 221.0,
+        "p": 0.264624907056207
+      },
+      {
+        "dataset": "CTRPv2",
+        "test": "V600_CRC_vs_melanoma_dAAC_dab_tra",
+        "drug": "Dabrafenib+Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 1,
+        "n2": 17,
+        "med1": NaN,
+        "med2": NaN,
+        "U": NaN,
+        "p": NaN
+      }
+    ]
+  },
+  "prism": {
+    "pset": "Orcestra canonical PRISM_2020 (DOI 10.5281/zenodo.7826864)",
+    "qc": "passed_str_profiling==True",
+    "metric": "aac_recomputed",
+    "tests": [
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Cobimetinib",
+        "metric": "aac_recomputed",
+        "n1": 44,
+        "n2": 422,
+        "med1": 0.4088413471395718,
+        "med2": 0.13935738550133706,
+        "U": 14854.0,
+        "p": 5.651840887426177e-11
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Dabrafenib",
+        "metric": "aac_recomputed",
+        "n1": 45,
+        "n2": 424,
+        "med1": 0.3447041634592719,
+        "med2": 0.04114308703029347,
+        "U": 17100.0,
+        "p": 1.919254010066454e-18
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "PD-0325901",
+        "metric": "aac_recomputed",
+        "n1": 45,
+        "n2": 418,
+        "med1": 0.4805488835889624,
+        "med2": 0.2622920359325649,
+        "U": 14467.0,
+        "p": 2.9289824636886764e-09
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "PLX4720",
+        "metric": "aac_recomputed",
+        "n1": 44,
+        "n2": 424,
+        "med1": 0.19034545171220482,
+        "med2": 0.14267381311758812,
+        "U": 13812.0,
+        "p": 1.5150217664167926e-07
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Selumetinib",
+        "metric": "aac_recomputed",
+        "n1": 45,
+        "n2": 427,
+        "med1": 0.27254562958099277,
+        "med2": 0.04324182590002821,
+        "U": 14687.0,
+        "p": 4.078117988511966e-09
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "TAK-733",
+        "metric": "aac_recomputed",
+        "n1": 45,
+        "n2": 418,
+        "med1": 0.46875808538743546,
+        "med2": 0.2846899716053549,
+        "U": 14473.0,
+        "p": 2.8143155386345505e-09
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 45,
+        "n2": 427,
+        "med1": 0.4026983046117688,
+        "med2": 0.18390536632969223,
+        "U": 14406.5,
+        "p": 3.510066113194984e-08
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Vemurafenib",
+        "metric": "aac_recomputed",
+        "n1": 44,
+        "n2": 425,
+        "med1": 0.16183223369383049,
+        "med2": 0.009308060226735904,
+        "U": 16820.0,
+        "p": 4.78548934096105e-19
+      },
+      {
+        "dataset": "PRISM",
+        "test": "pancancer_V600_vs_WT",
+        "drug": "Refametinib",
+        "metric": "aac_recomputed",
+        "n1": 36,
+        "n2": 318,
+        "med1": 0.3971041610712561,
+        "med2": 0.27561936035155465,
+        "U": 7993.5,
+        "p": 9.658613138120901e-05
+      },
+      {
+        "dataset": "PRISM",
+        "test": "V600_CRC_vs_melanoma_AAC_Dabrafenib",
+        "drug": "Dabrafenib+Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 6,
+        "n2": 30,
+        "med1": 0.11616969075099533,
+        "med2": 0.4260627894027665,
+        "U": 31.0,
+        "p": 0.010171517287266812
+      },
+      {
+        "dataset": "PRISM",
+        "test": "V600_CRC_vs_melanoma_AAC_Trametinib",
+        "drug": "Dabrafenib+Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 6,
+        "n2": 30,
+        "med1": 0.40319124625211444,
+        "med2": 0.4589203665913924,
+        "U": 58.0,
+        "p": 0.18616361500611975
+      },
+      {
+        "dataset": "PRISM",
+        "test": "V600_CRC_vs_melanoma_dAAC_Trametinib_minus_Dabrafenib",
+        "drug": "Dabrafenib+Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 6,
+        "n2": 30,
+        "med1": 0.15863509774879642,
+        "med2": 0.01293162103449326,
+        "U": 150.0,
+        "p": 0.008776091081593928
+      },
+      {
+        "dataset": "PRISM",
+        "test": "V600_CRC_vs_allothers_dAAC",
+        "drug": "Dabrafenib+Trametinib",
+        "metric": "aac_recomputed",
+        "n1": 6,
+        "n2": 39,
+        "med1": 0.15863509774879642,
+        "med2": 0.012879103786840845,
+        "U": 200.0,
+        "p": 0.003712925380537406
+      }
+    ],
+    "dissociation_note": "黑色素瘤分类修正为 lab 含 melanoma|skin (PRISM 标签用 skin); CRC n=6, melanoma n=30"
+  },
+  "software": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "rdata": "1.1.0"
+  }
+}

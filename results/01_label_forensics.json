@@ -1,0 +1,21 @@
+{
+  "dataset": "GDSC2 (24Jul22)",
+  "n_total_curves": 242036,
+  "n_coread_curves": 12538,
+  "n_coread_lines": 46,
+  "n_coread_drugs": 286,
+  "coread_pct_ic50_extrapolated_above_max_conc": 73.0,
+  "coread_pct_ic50_extrapolated_below_min_conc": 0.1,
+  "coread_pct_ic50_identifiable": 26.9,
+  "coread_median_RMSE": 0.08,
+  "coread_pct_RMSE_gt_0.15": 7.4,
+  "no_ci_provided_in_public_file": true,
+  "drugs_absent_that_matter_clinically": [
+    "Cetuximab",
+    "Panitumumab",
+    "Capecitabine",
+    "Trifluridine",
+    "Regorafenib",
+    "Encorafenib"
+  ]
+}

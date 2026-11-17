@@ -1,0 +1,7 @@
+stratum,n_lines,model_r2,r2_ci95,spearman,null_r2_p95,beats_null,pct_identifiable_in_subset,note
+5-Fluorouracil | ALL lines,39,0.364,"[0.127, 0.468]",0.64,-0.017,True,38.5,
+5-Fluorouracil | 仅 IC50 可识别,15,-0.542,"[-2.429, -0.189]",-0.358,-0.017,False,100.0,
+Oxaliplatin | ALL lines,39,0.198,"[-0.066, 0.331]",0.371,0.011,True,15.4,
+Oxaliplatin | 仅 IC50 可识别,6,,,,,,,"n<12, 不评估"
+Irinotecan | ALL lines,39,0.102,"[-0.196, 0.354]",0.452,-0.02,True,25.6,
+Irinotecan | 仅 IC50 可识别,10,,,,,,,"n<12, 不评估"
