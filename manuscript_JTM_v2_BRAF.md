@@ -1,0 +1,220 @@
+# Replication-first screening of 1,338 gene–drug pairs: BRAF-selective inhibition is blunted in colorectal cancer while MEK inhibition is retained
+
+**Running title:** Replication-first BRAF pharmacogenomics in colorectal cancer
+
+**Target:** Journal of Translational Medicine — Special issue *Harnessing Innovative Machine Learning Techniques to Combat Drug Resistance in Solid Tumors*
+
+---
+
+## Abstract
+
+**Background.** Transcriptome-wide machine learning is now the default strategy for discovering drug-resistance genes from public pharmacogenomic data, and it dominates submissions to this field. Whether the gene–drug associations such a strategy reports survive independent replication, and whether they are separable from technical and epidemiological confounders, is rarely tested.
+
+**Methods.** We assembled two independent screening campaigns of the Genomics of Drug Sensitivity in Cancer resource (GDSC2, 969 cell lines; GDSC1, 968 cell lines) and restricted all analyses to dose–response curves whose IC₅₀ lay *within* the tested concentration range (identifiability filter). We tested 1,338 (driver gene, drug) pairs for replication across campaigns using a pre-specified filter (|Cohen's *d*| ≥ 0.8 and ≥ 0.5 in GDSC2 and GDSC1 respectively, concordant direction, both *p* < 0.001). The number of surviving pairs was compared with a permutation null that preserved each gene's alteration frequency and the shared grouping across campaigns. We then tested whether mutational burden or lineage composition could explain the direction of the associations that pass conventional false-discovery control, asked whether expression-based models add information beyond mutation status, and characterised the colorectal exception in two patient cohorts (AC-ICAM, n = 348; TCGA COADREAD, n = 636).
+
+**Results.** Of 1,338 testable pairs, 5 survived the replication filter, and all 5 were BRAF → BRAF or MEK inhibitor (dabrafenib *d* = −1.35/−2.06; refametinib; PLX-4720; PD0325901; selumetinib; both *p* < 10⁻³ in both campaigns). The permutation null produced a median of 0 and a maximum of 1 surviving pair (empirical *p* = 0.005). Conventional single-campaign false-discovery-rate control produced 61 associations within the replication set (118 when all compounds were screened), and 83% of these had alteration associated with *higher* IC₅₀ (binomial *p* = 1.5 × 10⁻¹³). We tested two explanations for this systematic direction and could attribute it only partly to lineage composition (74% after lineage adjustment) and not at all to mutational burden, which was unrelated to overall drug resistance (*r* = −0.03, *p* = 0.37). Critically, all five replicated pairs ran *opposite* to this bias. After burden adjustment the BRAF signal remained dominant (*β* = −2.14, *p* = 9.4 × 10⁻¹¹). Within BRAF V600 models, colorectal lines were 30-fold less sensitive to the BRAF-selective inhibitor dabrafenib than melanoma lines (3.31 vs 0.11 nM) but equally sensitive to the MEK inhibitor trametinib (0.01 nM in both); the resulting BRAFi/MEKi dissociation was larger in colorectal cancer (5.28 vs 2.66, *p* = 1.0 × 10⁻⁴), replicated in GDSC1 (3.59 vs 2.19, *p* = 0.005), and was the single most reproducible per-line quantity we measured (cross-campaign *r* = 0.73, sign concordance 100%, n = 33). Expression-based elastic-net models identified *who carries* the mutation (AUC 0.91) but added only ΔR² = 0.056 (median) beyond mutation status. Two mechanistic candidates were tested and rejected: a baseline RTK/feedback transcriptional score (*r* = +0.09, *p* = 0.62) and a MAPK-output score (no within-lineage association). In patients, BRAF V600 was strongly enriched in CMS1 (60% vs 4%) and the right colon, but overall survival did not differ significantly (adjusted HR 0.96, 95% CI 0.57–1.61). As a positive control, the clinically established loss of fluorouracil benefit in mismatch-repair-deficient colorectal cancer could not be recovered at colorectal sample size (n = 46), where only a 2.3-fold difference was detectable at 80% power, which calibrates the size of effect this resource can resolve.
+
+**Conclusions.** Across 1,338 candidate gene–drug pairs, only the BRAF–MAPK axis survives independent replication, and it survives because its effect size exceeds every confounder we could measure — not because machine learning found it. What is reproducible in colorectal cancer is not a transcriptional programme but a drug-class-specific defect: BRAF-selective inhibition is blunted while MEK inhibition is retained, which is the cellular reading of the rationale behind combined BRAF and EGFR blockade.
+
+**Keywords:** colorectal cancer; BRAF V600E; drug resistance; machine learning; pharmacogenomics; replication; MEK inhibition; translational oncology
+
+---
+
+## Background
+
+Public pharmacogenomic resources — GDSC [1,2], the Cancer Cell Line Encyclopedia (CCLE) [3,4], the NCI-60 [5], PRISM [6] — were built to answer a simple question: does a genomic feature predict drug sensitivity? A decade of use has produced hundreds of published answers, most of the form "gene *X* or signature *S* predicts resistance to drug *Y*", and increasingly these are generated by penalised regression, random forests or neural networks fitted to baseline transcriptomes.
+
+Two things are rarely reported alongside such claims. The first is whether the association replicates in an independent screening campaign of the same cell lines. Cross-study discordance in large pharmacogenomic datasets is well documented at the level of drug response itself [7,8], but the consequence for *gene-level* claims is usually left implicit. The second is whether the association is separable from confounders that operate at the level of the cell line rather than the gene — most obviously proliferation rate, lineage, and the fact that mutation calls are not distributed independently of overall mutational burden.
+
+Here we take the opposite order of operations. Rather than fitting a model and reporting its performance, we first ask which gene–drug associations are *capable* of replicating, and treat the answer as the study's primary result. We use the two GDSC screening campaigns as mutual replication sets, because they interrogated largely the same cell lines with largely the same compounds under independently designed concentration ranges — an unusual opportunity to separate biology from batch. We restrict every analysis to dose–response curves whose IC₅₀ falls inside the tested concentration range, because outside that range the fitted value is an extrapolation whose magnitude is set by the curve-fitting software rather than by the cell.
+
+We chose colorectal cancer as the focal disease because it is where the field's assumptions are most strained: the pathway with the strongest clinical evidence (EGFR → RAS → BRAF → MEK) cannot be interrogated in vitro for its most important agent class, since cetuximab and panitumumab act through antibody-dependent cellular cytotoxicity and are absent from small-molecule viability screens.
+
+The result is not the discovery of a new resistance gene. It is a bounded answer to a question the field asks constantly and answers loosely: given the data everyone uses, which gene–drug relationships are real, which are confounded, and what does the one that survives actually mean in colorectal cancer.
+
+---
+
+## Methods
+
+### Data sources and version pinning
+
+GDSC2 and GDSC1 fitted dose–response tables (release 24 July 2022) were downloaded from the Sanger FTP release directory. Cell-line annotations, mutational data and model metadata were obtained from the Sanger Cell Model Passports bulk download (mutations_latest, model_list_latest). Baseline transcriptomes were taken from CCLE RNA-seq (RPKM, 2018-09-29) hosted at the Broad Institute. Clinical and genomic data for patient cohorts were retrieved through the cBioPortal REST API (studies `coad_silu_2022` and `coadread_tcga`). All downloads were performed on 16 November 2026 and file names, sizes and row counts are recorded in the repository README.
+
+### Identifiability filter
+
+For every fitted curve, IC₅₀ was reconstructed as exp(LN_IC50) and compared with the minimum and maximum concentration tested. Curves with IC₅₀ outside this interval were classified as censored and excluded from all downstream statistics. In colorectal cancer this removed 73.0% of curves (5-FU 63.0%, oxaliplatin 81.3%, irinotecan 76.1%); across the full CRC drug panel, the median compound had 88.9% of its curves censored and 95 of 286 compounds were 100% censored in every colorectal line.
+
+### Driver gene set and alteration definition
+
+A pre-specified set of 34 cancer driver genes spanning the MAPK, PI3K, p53/cell-cycle, Wnt, TGF-β, DNA-damage-response, mismatch-repair and RTK axes was used. A line was called altered for a gene if it carried at least one variant annotated as a cancer driver by Cell Model Passports, or a truncating/frameshift protein change. No genome-wide search for associated genes was performed.
+
+### Replication filter
+
+For each (gene, drug) pair we computed Cohen's *d* for the difference in mean ln(IC₅₀) between altered and wild-type lines, separately in GDSC2 and GDSC1, restricted to drugs with at least 40 identifiable samples in both campaigns and to pairs with at least 8 altered and 20 wild-type lines. A pair was declared replicated only if all four conditions held: |*d*| ≥ 0.8 in GDSC2, |*d*| ≥ 0.5 in GDSC1, concordant direction, and *p* < 0.001 by Welch test in both campaigns.
+
+### Permutation null
+
+The filter's specificity was evaluated against a null in which, for each gene, an equal number of cell lines was sampled at random as the "altered" group, with the same random grouping applied in both campaigns so that the cross-campaign correlation structure was preserved. Two hundred permutations were run. The empirical *p* value is (1 + #{null ≥ observed}) / (B + 1).
+
+### Mutational burden adjustment
+
+Per-line burden was defined as the number of distinct genes carrying a damaging variant. Enrichment of high-burden lines among mutation carriers was expressed as Cohen's *d* on burden. For each (gene, drug) pair, burden was added as a continuous covariate in an ordinary least-squares model of ln(IC₅₀) on alteration status, and the adjusted *β* for alteration status was reported with Benjamini–Hochberg correction [9] across all pairs.
+
+### Lineage-stratified sensitivity analysis
+
+To ask whether the systematic direction of single-campaign associations reflected tissue composition, each (gene, drug) pair was recomputed within lineage (requiring at least three altered and three wild-type lines per stratum), and within-lineage effect sizes were pooled by inverse-variance weights. The sign distribution before and after stratification was compared by exact binomial test against a symmetric null.
+
+### Positive control at colorectal sample size
+
+Microsatellite instability status for each model was taken from Cell Model Passports (`msi_status`). Within colorectal models, ln(IC₅₀) was compared between MSI and MSS lines for 5-FU, SN-38, irinotecan and oxaliplatin, restricted to identifiable curves and computed separately in each campaign. The minimum detectable effect was derived for a two-sample *t* test at α = 0.05 with 80% power given the realised group sizes, and converted to ln(IC₅₀) units using the pooled standard deviation.
+
+### Drug-class dissociation
+
+For each line with both dabrafenib and trametinib IC₅₀ identifiable, we defined the dissociation Δ = ln IC₅₀(dabrafenib) − ln IC₅₀(trametinib). Positive Δ indicates relative resistance to BRAF-selective inhibition with retained MEK sensitivity. Δ was compared between lineages by Mann–Whitney test within BRAF V600 lines, computed independently in both campaigns, and its cross-campaign reproducibility assessed by Pearson correlation and sign concordance.
+
+### Expression modelling
+
+Baseline transcriptomes were log₂(RPKM + 1), reduced to the 4,000 most variable genes by variance (unsupervised, no label contact), and modelled with elastic net (l1_ratio = 0.5, inner 4-fold CV over 15 alphas, standardised within pipeline). Performance was estimated by 5-fold cross-validated R². To test incremental value beyond mutation status, the outer fold was used to fit ln(IC₅₀) on BRAF status, the residual was predicted from expression inside that training fold, and the increment in outer-fold R² was recorded. Separately, logistic regression with the same pipeline estimated how well expression recovers BRAF V600 status (5-fold stratified AUC).
+
+### Patient cohorts
+
+AC-ICAM (`coad_silu_2022`, n = 348) was used as the primary clinical cohort because it is the only public colorectal cohort combining expression, mutation calls and a genuine adjuvant-treatment annotation (110 patients treated). Overall survival was modelled with Cox regression adjusted for pathological stage and age at diagnosis; the gene × chemotherapy interaction was tested explicitly. TCGA COADREAD (n = 636) served as a consistency check for the BRAF V600 survival association. Consensus molecular subtype (CMS) was taken from the cohort annotation.
+
+### Software and reproducibility
+
+Python 3.13, numpy, pandas, scipy, scikit-learn, lifelines, matplotlib. All analysis scripts, intermediate tables and figure code are provided; scripts are numbered in execution order and each writes its output to `results/`. Random seeds are fixed (permutation seed 20261116). Reporting follows REMARK [10]; bias assessment follows PROBAST [11], and the expression models are reported against TRIPOD+AI [12].
+
+---
+
+## Results
+
+### Only 5 of 1,338 gene–drug pairs replicate across screening campaigns, and all 5 involve BRAF
+
+Across 34 driver genes and 86 compounds with at least 40 identifiable samples in both campaigns, 1,338 (gene, drug) pairs were testable. Applying the pre-specified replication filter left **5 pairs**, all of them BRAF with a BRAF or MEK inhibitor: dabrafenib (*d* = −1.35 GDSC2, −2.06 GDSC1), refametinib (−1.03, −1.09), PLX-4720 (−0.99, −1.32), PD0325901 (−0.91, −1.05) and selumetinib (−0.83, −0.81). Every one was significant at *p* < 5 × 10⁻⁵ in both campaigns, with the strongest at *p* = 4 × 10⁻¹⁶ (Fig. 1A).
+
+The permutation null, which preserves each gene's alteration frequency and the shared grouping across campaigns, produced a median of 0 surviving pairs, a 95th percentile of 0 and a maximum of 1 over 200 permutations. Observing 5 gives an empirical *p* = 0.005 (Fig. 1B). The filter is therefore not merely permissive; it is close to producing nothing under arbitrary grouping.
+
+### Conventional false-discovery-rate control generates 61–118 associations with a systematic direction we could not fully explain
+
+Before replication was required, single-campaign Benjamini–Hochberg control at *q* < 0.05 with |*d*| ≥ 0.5 yielded 61 gene–drug associations within the 86 compounds common to both campaigns; screening all 192 GDSC2 compounds yielded 118. In both sets the direction was strongly skewed: 98 of 118 (83%) had alteration associated with *higher* IC₅₀, i.e. resistance, against a symmetric null expectation of 50% (binomial *p* = 1.5 × 10⁻¹³) (Fig. 1A, second bar).
+
+We pre-specified two candidate explanations and tested both. Neither was sufficient.
+
+**Mutational burden explains clustering, not direction.** Driver-gene mutation calls are not distributed independently across cell lines: a hypermutated line is more likely to carry *any* given driver variant. We found that 96% of the 34 driver genes were enriched in high-burden lines among their mutation carriers, with a median Cohen's *d* of +1.40. MLH1 (*d* = +3.18), BRCA2 (+3.14), MSH6 (+2.62) and FBXW7 (+2.30) showed the largest enrichment, exactly as expected for mismatch-repair-deficient models (Fig. 1C). BRAF is the exception (*d* = +0.20): BRAF V600E is enriched in right-sided, microsatellite-stable colorectal tumours [13], so BRAF-mutant lines are not drawn from the hypermutated tail. This matters for confounding — BRAF is the one gene in the panel whose association with drug response cannot be manufactured by co-occurring hypermutation — but it cannot generate the direction bias, because burden was essentially unrelated to mean drug sensitivity across the panel (*r* = −0.03, *p* = 0.37, n = 962). We report this as a rejected hypothesis rather than omitting it.
+
+**Lineage composition accounts for part of the skew.** Recomputing each association within lineage and pooling reduced the positive fraction from 83% to 74% (binomial *p* = 1.7 × 10⁻⁶) and the median |*d*| from 0.59 to 0.48. Tissue of origin is therefore a contributor but not the whole story.
+
+The residual skew is unexplained by anything we measured, and we treat that as a substantive finding: a single-campaign gene-level list from this resource carries a directional bias that no routine adjustment removes. The replication filter is protected against it for a specific reason — **all five surviving pairs have *d* < 0**, running opposite to the bias. A systematic tendency for alteration to increase IC₅₀ cannot manufacture associations in the opposite direction, and the permutation null, which preserves each gene's alteration frequency, produced at most one survivor in 200 draws.
+
+As a sensitivity analysis we nevertheless repeated the whole scan with burden as a continuous covariate. Across 2,891 (gene, drug) pairs, 48 retained *q* < 0.05 with |*β*| ≥ 0.3; ranked by absolute effect, 6 of the 8 largest were BRAF–MAPK-inhibitor pairs, and the BRAF effect on dabrafenib sensitivity strengthened rather than weakened (*β* = −2.14, *p* = 9.4 × 10⁻¹¹). The conclusion is unchanged under this adjustment; what changes is our interpretation of *why* the unadjusted list is inflated.
+
+### Machine learning on expression identifies who carries the mutation, not what the mutation means
+
+A natural objection is that a sufficiently flexible expression model would have found BRAF without being told about it. It does — partly. Elastic-net classifiers on 4,000 variable genes recovered BRAF V600 status with cross-validated AUC between 0.895 and 0.943 (median 0.906) across six MAPK inhibitors. BRAF V600E leaves a strong transcriptional imprint, and expression models read that imprint reliably.
+
+But reading the imprint is not the same as adding information. Alone, BRAF status explained a median of 10.8% of ln(IC₅₀) variance; the full transcriptome explained a median of 15.8% — more in absolute terms, but largely the same information. When BRAF status was fitted first and expression was used only to predict the residual, the median increment in outer-fold R² was **+0.056**, positive in 5 of 6 compounds and negative for dabrafenib (−0.21, where n = 72 makes cross-validated estimates unstable).
+
+The honest reading is therefore narrower than "one codon beats twenty thousand transcripts", which our data do not support. It is that transcriptome-wide models in this setting are mostly *surrogates for mutation status*, contributing a small and inconsistent increment once the mutation is known. On a resource where the causal variant is unknown — which is the usual case — that surrogate logic cannot be assumed to hold.
+
+### Colorectal cancer dissociates BRAF from MEK inhibition, reproducibly
+
+Among BRAF V600 models, the drug-class dissociation Δ was largest in colorectal cancer: median 5.28 versus 2.66 in all other lineages (*p* = 1.0 × 10⁻⁴, GDSC2, n = 6 vs 37). In the independent GDSC1 campaign the same ordering appeared (3.59 vs 2.19, *p* = 0.005, n = 3 vs 24) (Fig. 1D).
+
+The absolute potencies make the point more clearly than the effect size. BRAF V600 colorectal lines had a median dabrafenib IC₅₀ of 3.31 nM against 0.11 nM in BRAF V600 melanoma — a 30-fold difference — while trametinib IC₅₀ was 0.01 nM in both (Fig. 2A). The colorectal defect is therefore specific to BRAF-selective inhibition and does not extend to MEK inhibition, which is precisely the pattern that motivated combined BRAF and EGFR blockade in the BEACON trial [14].
+
+Δ was also the most reproducible per-line quantity in this study: across 33 lines measured in both campaigns, *r* = 0.73 and sign concordance was 100%. By comparison, the raw cross-campaign agreement of 5-FU IC₅₀ in colorectal lines is *r* = 0.67, and falls to essentially zero (r = 0.048) when restricted to lines in which both campaigns measured IC₅₀ inside their concentration range. A ratio of two drugs measured in the same well plate is more stable than either drug alone — a practical lesson for anyone building response biomarkers from these resources.
+
+### Two mechanistic hypotheses that the data rejected
+
+We pre-specified and tested two transcriptional explanations for the colorectal dissociation, and report both as negative.
+
+A 20-gene RTK/feedback score (EGFR, ERBB2, ERBB3, AREG, EREG, DUSP4/6, SPRY2/4, ETV4/5, PHLDA1, EPHA2, FGFR1, MET, IGF1R and ligands) did not predict dabrafenib sensitivity within BRAF V600 lines (*r* = +0.09, *p* = 0.62, n = 32), and a proliferation score did not either (*r* = −0.16).
+
+A 12-gene MAPK-output score (DUSP6, DUSP4, SPRY2, SPRY4, ETV4, ETV5, PHLDA1, CCND1, FOSL1, EPHA2, CXCL8, MMP1) correlated strongly with dabrafenib IC₅₀ across the whole panel (*r* = −0.54, *p* = 1.3 × 10⁻⁶) but the association vanished within every lineage of adequate size (melanoma *ρ* = −0.12, *p* = 0.59; colorectal *ρ* = −0.04). It is a proxy for BRAF mutation status across lineages, not a within-lineage determinant.
+
+Both negatives are informative: the colorectal dissociation is not visible at the level of bulk baseline transcription, which is the level at which the machine-learning literature operates. Resolving it will require measurements this resource does not contain — phospho-ERK dynamics, RAF dimerisation, or single-cell state — and we state this rather than substituting a correlative narrative.
+
+### In patients, BRAF V600 marks a subtype rather than a survival difference
+
+In AC-ICAM, 56 of 348 patients carried BRAF V600 (47 among stage I–III). These patients were concentrated in CMS1 [15] (28/47, 60%) versus 10/240 (4%) in wild-type tumours, and in the right colon (22 of 47 arose in the caecum). This is the expected epidemiology and confirms that the cohort's BRAF-mutant patients are the same disease entity as in the trial literature.
+
+Overall survival did not differ significantly after adjustment for stage and age: HR 0.96 (95% CI 0.57–1.61, *p* = 0.86) in stage I–III, with a consistent null in TCGA COADREAD (BRAF V600 n = 18; HR 1.73, 95% CI 0.71–4.25, *p* = 0.23). The BRAF × adjuvant chemotherapy interaction was also non-significant (HR 1.88, 95% CI 0.48–7.29, *p* = 0.36), but only 7 BRAF-mutant patients received chemotherapy, so this is an uninformative null rather than evidence of no effect (Fig. 2B,C).
+
+We report this openly. The cell-line result concerns *drug-class selectivity*, and no public colorectal cohort links BRAF status to BRAF-inhibitor exposure — because until BEACON, essentially none received one. The clinical question the cell data speak to is not answerable in retrospective cohorts that predate the regimen.
+
+---
+
+## Discussion
+
+The central result is a negative one with a sharp positive edge. Of 1,338 gene–drug pairs that the field routinely tests, one gene survives independent replication, and it survives by a margin that no statistical adjustment we applied could remove.
+
+The 61–118 associations that pass conventional false-discovery control are a different matter. They carry a directional signature — 83% report that alteration confers resistance — that chance cannot produce, and we could only partly decompose it. Lineage composition is a contributor and mutational burden is not: burden governs *which genes* appear altered, because mutation calls cluster in hypermutated lines, but it is unrelated to mean drug sensitivity, so it cannot explain a preference for one direction. BRAF's exemption from burden enrichment (*d* = +0.20) is nonetheless worth recording, because it tells us that BRAF is the one gene in this panel whose association cannot be manufactured by co-occurring mismatch-repair deficiency. But the honest statement about the direction bias is that we did not identify its cause, and that a gene-level list produced this way should not be interpreted without a replication requirement.
+
+Absence from our list also does not mean absence of a real interaction, and we tested that directly. The best-established gene–drug interaction in this disease is the lack of benefit from fluorouracil-based adjuvant chemotherapy in mismatch-repair-deficient colon cancer [16], and it is testable in this resource: 15 of 46 colorectal models are MSI. It is not recovered. MSI lines had 1.71-fold higher 5-FU IC₅₀ than MSS lines in GDSC2 (n = 10 versus 7, *p* = 0.088) but 0.69-fold in GDSC1 (n = 12 versus 12, *p* = 0.14): the direction reverses between campaigns and neither comparison reaches significance. At these group sizes the design could only detect a difference of about 2.3-fold at 80% power, so the result is uninformative rather than null — but the lesson is quantitative and it governs how the rest of this paper should be read. Within a single tumour type, at n ≈ 46 and after censoring removes nearly three quarters of the curves, even a clinically unambiguous interaction of moderate size is not recoverable. That is why the primary scan was run across the full panel, where n is twenty times larger, and why the five surviving pairs should be read as large-effect exceptions rather than as a representative yield. A colorectal-only gene-level claim built on this resource carries the risk demonstrated by this positive control.
+
+That asymmetry is what makes the replication filter more than a robustness check. The bias runs towards resistance; every one of the five replicated pairs runs towards sensitivity. A systematic artefact pointing one way cannot generate a concordant signal pointing the other, and a null that preserves each gene's alteration frequency produces essentially nothing. The filter is doing work that false-discovery control cannot do.
+
+The second result concerns what machine learning contributes. Expression models recovered BRAF status with AUC 0.91 — impressively, and yet the impressiveness is the problem: the model is reading a downstream imprint of a variant it was not given. Once the variant is supplied, expression adds a median of 0.056 R². This is not an argument against machine learning in pharmacogenomics; it is an argument that its output must be interpreted against the mutation it is implicitly predicting. In a resource where the causal variant has not yet been identified — the situation for most drugs — the surrogate cannot be validated, and the model's apparent performance may be entirely borrowed.
+
+The third result is the one with translational content. Within BRAF V600, colorectal lines are 30-fold less sensitive to dabrafenib than melanoma lines and equally sensitive to trametinib. The dissociation is reproducible across campaigns with *r* = 0.73 and 100% sign concordance — better than the reproducibility of either drug's IC₅₀ alone. This is the cellular counterpart of the clinical observation that BRAF-selective monotherapy fails in colorectal cancer while MEK inhibition retains activity [17,18], and it is the reason the effective regimen adds EGFR blockade [14].
+
+We tried to explain the dissociation transcriptionally and failed twice. We regard the failures as findings. The RTK/feedback and MAPK-output scores are exactly the constructs that a machine-learning pipeline would nominate, and neither shows a within-lineage association. A field that reports only the constructions that work will keep rediscovering that bulk transcriptomes do not encode the mechanism.
+
+### Limitations
+
+First, six colorectal BRAF V600 lines carry the dissociation estimate; the effect is large and replicated, but the confidence interval on a 30-fold potency difference from six lines is wide enough that the number should be read as an order of magnitude, not a point estimate. Second, the identifiability filter removes 73% of colorectal curves; that is the point of the filter, but it also means the surviving estimates are drawn from a selected subset of lines whose dose–response curves happened to bracket their IC₅₀, and this selection may not be drug-neutral. Third, BRAF V600 is defined from Cell Model Passports annotations; lines with unlisted non-V600 BRAF variants are treated as wild type. Fourth, GDSC1 and GDSC2 differ in concentration design as well as in assay protocol, so "replication" here means replication across two imperfectly matched experiments, not across two identical ones. Fifth, the patient analysis is retrospective and predates BRAF-inhibitor use in colorectal cancer, so it cannot test the regimen the cell data most directly inform. Sixth, we tested 34 pre-specified genes and did not search the genome; genes outside that set are untested, not excluded. Seventh, we did not integrate CRISPR-based fitness data for the same models [19], which is the natural way to ask whether the colorectal dissociation reflects a difference in BRAF dependency rather than in drug pharmacology. Eighth, the dissociation rests on small-molecule screens only; patient-derived organoid panels [20] would be the appropriate next test.
+
+### What would overturn this
+
+The central claim fails if any gene–drug pair outside the BRAF–MAPK axis replicates across GDSC1 and GDSC2 under the stated filter — we provide the code to test any candidate. The dissociation claim fails if, in an independent colorectal BRAF V600 panel profiled with both drug classes at clinically relevant concentrations, the dabrafenib-to-trametinib potency ratio is not larger than in melanoma. The mechanistic conclusion fails if a measurement not in this resource — phospho-ERK rebound kinetics after dabrafenib washout, or EGFR-dependent RAF dimerisation — turns out to separate colorectal from melanoma lines cleanly, which would replace our negative with a positive and would be a better paper.
+
+---
+
+## Declarations
+
+**Ethics approval and consent to participate.** Not applicable. All data are publicly available, de-identified, previously published secondary data.
+
+**Consent for publication.** Not applicable.
+
+**Availability of data and materials.** All primary data are public: GDSC release 24Jul22 (Sanger FTP), Cell Model Passports bulk downloads, CCLE RNA-seq 2018-09-29 (Broad), cBioPortal studies `coad_silu_2022` and `coadread_tcga`. Derived tables, analysis scripts and figure code are provided in the accompanying repository; scripts are numbered in execution order.
+
+**Competing interests.** The authors declare no competing interests.
+
+**Funding.** None.
+
+**Authors' contributions.** To be completed.
+
+**Acknowledgements.** Not applicable.
+
+---
+
+## Figure legends
+
+**Figure 1. Three independent filters converge on one gene.** (**A**) Sequential filtering of 1,338 testable (driver gene, drug) pairs. Conventional false-discovery control within a single campaign yields 61 pairs (118 when all compounds are screened), predominantly reporting that alteration increases IC₅₀; mutational-burden adjustment leaves 48; requiring replication across two independent campaigns leaves 5, all BRAF → BRAF/MEK inhibitor. x axis is logarithmic. (**B**) Permutation null (200 permutations) preserving each gene's alteration frequency and the shared grouping across campaigns; observed value 5, empirical *p* = 0.005. (**C**) Enrichment of high-burden cell lines among mutation carriers for 20 driver genes (Cohen's *d* on mutational burden). 96% of genes are positive; BRAF (*d* = +0.20) is the exception. Burden determines which genes appear altered but is unrelated to mean drug sensitivity (*r* = −0.03), and therefore does not explain the direction of the associations in **A**. (**D**) Per-line dissociation between BRAF-selective and MEK inhibition, Δ = ln IC₅₀(dabrafenib) − ln IC₅₀(trametinib), in BRAF V600 lines by lineage (GDSC2). Boxes show median and interquartile range; points are individual lines.
+
+**Figure 2. The colorectal exception and its clinical context.** (**A**) Median IC₅₀ (with interquartile range) of dabrafenib and trametinib in BRAF V600 colorectal and melanoma lines. MEK inhibition is equipotent across lineages; BRAF-selective inhibition is 30-fold weaker in colorectal cancer. (**B**) Distribution of consensus molecular subtypes in BRAF V600 (n = 47) versus wild-type (n = 240) stage I–III patients (AC-ICAM). (**C**) Kaplan–Meier overall survival by BRAF V600 status, stage I–III, with Cox hazard ratio adjusted for stage and age.
+
+---
+
+## References
+
+1. Yang W, Soares J, Greninger P, et al. Genomics of Drug Sensitivity in Cancer (GDSC): a resource for therapeutic biomarker discovery in cancer cells. *Nucleic Acids Res.* 2013;41:D955–61. doi:10.1093/nar/gks1111
+2. Iorio F, Knijnenburg TA, Vis DJ, et al. A landscape of pharmacogenomic interactions in cancer. *Cell.* 2016;166:740–54. doi:10.1016/j.cell.2016.06.017
+3. Ghandi M, Huang FW, Jané-Valbuena J, et al. Next-generation characterization of the Cancer Cell Line Encyclopedia. *Nature.* 2019;569:503–8. doi:10.1038/s41586-019-1186-3
+4. Barretina J, Caponigro G, Stransky N, et al. The Cancer Cell Line Encyclopedia enables predictive modelling of anticancer drug sensitivity. *Nature.* 2012;483:603–7. doi:10.1038/nature11003
+5. Shoemaker RH. The NCI60 human tumour cell line anticancer drug screen. *Nat Rev Cancer.* 2006;6:813–23. doi:10.1038/nrc1951
+6. Corsello SM, Nagari RT, Spangler RD, et al. Discovering the anti-cancer potential of non-oncology drugs by systematic viability profiling. *Nat Cancer.* 2020;1:235–48. doi:10.1038/s43018-019-0018-6
+7. Haibe-Kains B, El-Hachem N, Birkbak NJ, et al. Inconsistency in large pharmacogenomic studies. *Nature.* 2013;504:389–93. doi:10.1038/nature12831
+8. Safikhani Z, Smirnov P, Freeman M, et al. Revisiting inconsistency in large pharmacogenomic studies. *F1000Res.* 2016;5:2333. doi:10.12688/f1000research.9611.3
+9. Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. *J R Stat Soc Series B.* 1995;57:289–300. doi:10.1111/j.2517-6161.1995.tb02031.x
+10. Sauerbrei W, Taube SE, McShane LM, et al. Reporting recommendations for tumor marker prognostic studies (REMARK): an abridged explanation and elaboration. *J Natl Cancer Inst.* 2018;110:803–11. doi:10.1093/jnci/djy088
+11. Wolff RF, Moons KGM, Riley RD, et al. PROBAST: a tool to assess the risk of bias and applicability of prediction model studies. *Ann Intern Med.* 2019;170:51–8. doi:10.7326/m18-1376
+12. Collins GS, Moons KGM, Dhiman P, et al. TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods. *BMJ.* 2024;385:e078378. doi:10.1136/bmj-2023-078378
+13. Yaeger R, Chatila WK, Lipsyc MD, et al. Clinical sequencing defines the genomic landscape of metastatic colorectal cancer. *Cancer Cell.* 2018;33:125–136.e3. doi:10.1016/j.ccell.2017.12.004
+14. Kopetz S, Grothey A, Yaeger R, et al. Encorafenib, binimetinib, and cetuximab in BRAF V600E-mutated colorectal cancer. *N Engl J Med.* 2019;381:1632–43. doi:10.1056/NEJMoa1908075
+15. Guinney J, Dienstmann R, Wang X, et al. The consensus molecular subtypes of colorectal cancer. *Nat Med.* 2015;21:1350–6. doi:10.1038/nm.3967
+16. Ribic CM, Sargent DJ, Moore MJ, et al. Tumor microsatellite-instability status as a predictor of benefit from fluorouracil-based adjuvant chemotherapy for colon cancer. *N Engl J Med.* 2003;349:247–57. doi:10.1056/NEJMoa022289
+17. Corcoran RB, Ebi H, Turke AB, et al. EGFR-mediated re-activation of MAPK signaling contributes to insensitivity of BRAF mutant colorectal cancers to RAF inhibition with vemurafenib. *Cancer Discov.* 2012;2:227–35. doi:10.1158/2159-8290.CD-11-0341
+18. Prahallad A, Sun C, Huang S, et al. Unresponsiveness of colon cancer to BRAF(V600E) inhibition through feedback activation of EGFR. *Nature.* 2012;483:100–3. doi:10.1038/nature10868
+19. Tsherniak A, Vazquez F, Montgomery PG, et al. Defining a Cancer Dependency Map. *Cell.* 2017;170:564–576.e16. doi:10.1016/j.cell.2017.06.010
+20. Vlachogiannis G, Hedayat S, Vatsiou A, et al. Patient-derived organoids model treatment response of metastatic gastrointestinal cancers. *Science.* 2018;359:920–6. doi:10.1126/science.aao2774

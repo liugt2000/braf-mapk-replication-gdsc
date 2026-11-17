@@ -1,0 +1,15 @@
+# Files intentionally not tracked in this repository.
+# Large public raw data: download via data/AVAILABILITY.md (checksums there).
+data/raw/GDSC2_public_raw_data_24Jul22.csv
+data/raw/GDSC1_fitted_dose_response_24Jul22.csv
+data/raw/GDSC2_fitted_dose_response_24Jul22.csv
+data/raw/CCLE_RNAseq_genes_rpkm_20180929.gct.gz
+data/raw/psets/*.rds
+
+# Internal working area, not for publication
+tmp/
+.workbuddy/
+
+# Python
+__pycache__/
+*.pyc
